@@ -1,18 +1,36 @@
-# Sietse Tn5250
+# tn5250 Homebrew tap
 
-## How do I install these formulae?
+A curses-based 5250 terminal emulator for IBM i, with OpenSSL support.
 
-`brew install sietse/tn5250/<formula>`
+## Installation
 
-Or `brew tap sietse/tn5250` and then `brew install <formula>`.
-
-Or, in a `brew bundle` `Brewfile`:
-
-```ruby
-tap "sietse/tn5250"
-brew "<formula>"
+```sh
+brew install targeter/tn5250/tn5250
 ```
 
-## Documentation
+Or in a Brewfile:
 
-`brew help`, `man brew` or check [Homebrew's documentation](https://docs.brew.sh).
+```ruby
+tap "targeter/tn5250"
+brew "tn5250"
+```
+
+## Updates
+
+The `brew bump` GitHub Actions workflow checks daily at 13:45 UTC for a new
+upstream GitHub release and opens a formula update pull request. Updates require
+review and merging; they are not merged automatically.
+
+GitHub Actions must be allowed to create pull requests under **Settings → Actions
+→ General → Workflow permissions**.
+
+Pull requests created using `GITHUB_TOKEN` do not trigger the pull-request test
+workflow automatically. To run CI, close and reopen the generated PR as a user,
+or use a GitHub App token or personal access token for the bump workflow.
+
+After an update is merged:
+
+```sh
+brew update
+brew upgrade targeter/tn5250/tn5250
+```
