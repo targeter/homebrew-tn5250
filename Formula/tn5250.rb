@@ -16,7 +16,7 @@ class Tn5250 < Formula
   def install
     system "./configure", *std_configure_args,
                           "--disable-silent-rules",
-                          "--with-ssl=#{Formula["openssl@3"].opt_prefix}"
+                          "--with-ssl=#{formula_opt_prefix("openssl@3")}"
     system "make", "install"
   end
 
